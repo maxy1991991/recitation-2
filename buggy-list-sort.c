@@ -35,11 +35,13 @@ void swap(int* a, int* b) {
  */
 void bubble_sort(struct link* head) {
   if (head != NULL) {
+
     int swapped = 0;
     do {
       struct link* curr = head;
       swapped = 0;
       while (curr != NULL) {
+        if (curr->next ==NULL) break;
         if (curr->val > curr->next->val) {
           swap(&curr->val, &curr->next->val);
           swapped = 1;
@@ -80,6 +82,12 @@ int main(int argc, char const *argv[]) {
     printf("  %d", curr->val);
   }
   printf("\n");
-
+  
+  struct link* curr = head;
+  while (curr != NULL) {
+    struct link* temp = curr;
+    curr = curr->next;
+    free(temp);
+  }
   return 0;
 }

@@ -10,11 +10,12 @@ void setval(int* i_ptr, int val) {
 }
 
 int main(int argc, char** argv) {
-  int a;
+  int a=0;
   setval(&a, 13);
   printf("a: %d\n", a);
 
-  int* b;
+  int* b=malloc(sizeof(int));
   setval(b, 4);
   printf("*b: %d\n", *b);
+  free (b);
 }

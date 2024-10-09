@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]) {
   }
 
   /*
-   * Convert user-specified value of n from a strint to an integer.
+   * Convert user-specified value of n from a string to an integer.
    */
   int n = strtol(argv[1], NULL, 0);
   if (n <= 0) {
@@ -29,8 +29,8 @@ int main(int argc, char const *argv[]) {
   /*
    * Compute n!
    */
-  int i, f;
-  for (i = 1; i < n; i++) {
+  int i, f = 1; 
+  for (i = 1; i <= n; i++) {  
     f *= i;
   }
   printf("%d! = %d\n", n, f);
